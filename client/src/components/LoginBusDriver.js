@@ -79,7 +79,7 @@ class LoginBusDriver extends React.Component {
                         onChange={this.onBusIdChange}
                     />
                     <br />
-                    <button type="button" onClick={this.onSubmit}> add expense </button>
+                    <button type="button" onClick={this.onSubmit}>SUBMIT</button>
                 </form>
 
             </div>

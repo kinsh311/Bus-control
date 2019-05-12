@@ -86,7 +86,13 @@ module.exports = (app) => {
         }
             clearInterval(run)
             time = time + interval
-            requestThreshold=requestThreshold+10
+            if(time<maxTime){
+                requestThreshold=requestThreshold+10
+            }
+            if(time==maxTime){
+                 requestThreshold=0
+            }
+           
             if (time > maxTime) {
                 time = interval
                 requestThreshold=baseRequestThreshold

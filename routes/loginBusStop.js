@@ -16,9 +16,9 @@ module.exports = (app) => {
         console.log(req.body.data)
         if(req.body.data.user  === "kinsh" && req.body.data.password === "kinsh"){
             dataToSend.check = true
-            dataToSend.routes.push("r2","r3")
             
-            let src=req.body.data.stop.toString()
+            
+            let src=req.body.data.stop
             
             await Route.find({stops:{$in:[src]}}).then((res)=>{
                 res.forEach(element => {

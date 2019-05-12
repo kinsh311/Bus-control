@@ -79,7 +79,7 @@ class LoginBusStop extends React.Component {
                         onChange={this.onstopChange}
                     />
                     <br />
-                    <button type="button" onClick={this.onSubmit}> add expense </button>
+                    <button type="button" onClick={this.onSubmit}>Submit</button>
                 </form>
 
             </div>

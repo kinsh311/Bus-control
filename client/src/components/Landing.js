@@ -8,6 +8,8 @@
 //     )
 // }
 // export default Landing;
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button} from 'react-bootstrap';
 import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
@@ -21,7 +23,7 @@ import { connect } from 'react-redux';
     time: Date.now(),
     r:[],
     
-    s: "hopefarm",
+    s: "",
     recievedArray: [],
     selectedRoute: 'none'
   }
@@ -66,7 +68,7 @@ import { connect } from 'react-redux';
 
     const data = {
       dest: this.state.dest,
-      src : 'hopefarm',
+      src : this.props.auth.stop,
       route: this.state.selectedRoute,
       ticketCount: this.state.ticketCount
     };
@@ -86,7 +88,7 @@ import { connect } from 'react-redux';
     const data = {
       bus: event.target.name,
       route: event.target.value,
-      src: this.state.s
+      src: this.props.auth.stop
     }
     await axios.post('http://localhost:5000/reached', {data}).then(res => {
       // console.log(res.data)
@@ -152,7 +154,7 @@ renderRoutes() {
       <ul>{this.renderButtons()}</ul>
       <ul>{this.renderRoutes()}</ul>
       <div><h3>Selected Route {this.state.selectedRoute}</h3></div>
-          <button type="submit">Submit</button>
+          <Button type="submit">Submit</Button>
         </form>
       </div>
     )
